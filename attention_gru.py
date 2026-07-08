@@ -29,7 +29,6 @@ class DetectorAttentionGRU(nn.Module):
 
         
     def forward(self, x, return_attention = False):
-        #h_0 = torch.zeros(self.num_layers, x.size(0), self.hidden_size).requires_grad_() 
         out, h_n = self.gru(x)
 
         attn = self.attention(out)
